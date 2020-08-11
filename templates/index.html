@@ -8,5 +8,12 @@
     </head>
     <body>
         <h1>Looking glass</h1>
+        <form method="POST" action="/query">
+        {{ form.hidden_tag() }}
+        {{ form.query() }}
+        {{ form.ip_address.label }}
+        {{ form.ip_address() }}
+        {{ form.submit() }}
+        </form>
     </body>
 </html>

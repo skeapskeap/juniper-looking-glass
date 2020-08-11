@@ -6,8 +6,11 @@
         </title>
     </head>    
     <body>
+        <div>
+        query: {{ command }} {{ host }}
         {% for row in result %}
             {{row}}<br>
         {% endfor %}
+        </div>
     </body>
 </html>
