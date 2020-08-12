@@ -10,6 +10,7 @@ class JunQuery(FlaskForm):
                                        ('traceroute', 'traceroute'),
                                        ('ping', 'ping')
                                        ],
-                              default='ping')
-    ip_address  = StringField('IP address', validators=[Optional(), IPAddress(message='incorrect IP')])
-    submit      = SubmitField('submit query')
+                              default='ping',
+                              render_kw={'class': 'form-control'})
+    ip_address  = StringField('IP address', validators=[Optional(), IPAddress(message='incorrect IP')], render_kw={'class': 'form-control'})
+    submit      = SubmitField('submit query', render_kw={'class': 'form-control'})

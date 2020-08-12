@@ -13,7 +13,6 @@ import subprocess
 
 
 def connect(command):
-    print(command)
     conn = manager.connect(host=JUN_IP,
                            port=JUN_PORT,
                            username=USERNAME,
@@ -58,15 +57,5 @@ def ping(target_host: str) -> str:
         return False
 
 
-def run_ping(ping_IP, ping_count='4'):
-    with Device(host=JUN_IP, user=USERNAME, password=PASSWORD, port=23) as dev:
-        ping = dev.rpc.ping(count=ping_count, host=ping_IP)
-        # ping = ping.xpath('target-host')[0].text  # возвращает кусок из xml
-        ping = etree.tostring(ping, encoding='unicode')  # возвращает xml в виде строки
-        print(ping)
-    return ping
-
-
 if __name__ == '__main__':
-    #print(connect(command))
-    print(run_ping('8.8.8.8', '2'))
+    print(connect('show version'))
