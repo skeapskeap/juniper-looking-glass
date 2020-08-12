@@ -17,13 +17,13 @@ def index():
 def query():
     form = JunQuery()
     if form.validate_on_submit():
-        command = form.query.data
+        query = form.query.data
         ip = form.ip_address.data
-        jun_response = reply_to_query(command, ip)
+        jun_response = reply_to_query(query, ip)
         return render_template('reply.html',
                                 result=jun_response,
-                                host=form.ip_address.data,
-                                command=command)
+                                host=ip,
+                                command=query)
     return render_template('index.html')
 
 

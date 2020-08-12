@@ -7,10 +7,14 @@
     </head>    
     <body>
         <div>
-        query: {{ command }} {{ host }}
-        {% for row in result %}
-            {{row}}<br>
-        {% endfor %}
+        query: {{ command }} {{ host }} <br>
+        {% if result %}
+            {% for row in result %}
+                {{row}}<br>
+            {% endfor %}
+        {% else %}
+            Error
+        {% endif %}
         </div>
     </body>
 </html>

@@ -7,8 +7,7 @@ class JunQuery(FlaskForm):
     query       = SelectField(choices=[('show bgp summary', 'bgp summary'),
                                        ('show route protocol bgp terse', 'bgp route terse'),
                                        ('show route protocol bgp detail', 'bgp route detail'),
-                                       ('udp traceroute', 'udp traceroute'),
-                                       ('icmp-traceroute', 'icmp-traceroute'),
+                                       ('traceroute', 'traceroute'),
                                        ('ping', 'ping')
                                        ],
                               default='ping')
