@@ -7,7 +7,7 @@ from settings import APP_SECRET_KEY
 
 app = Flask(__name__)
 app.secret_key = APP_SECRET_KEY
-limiter = Limiter(app, key_funk=get_remote_address)
+limiter = Limiter(app, key_func=get_remote_address)
 
 
 @app.route('/')
@@ -17,7 +17,7 @@ def index():
 
 
 @app.route('/query', methods=('GET', 'POST'))
-@limiter.limit('1/second')
+@limiter.limit('1/second;20/minute')
 def query():
     command = request.form['message']
     target = request.form['target']
