@@ -78,8 +78,10 @@ def reply_to_query(command, target):
 
     query = input.query()
     if command == 'ping':
+        query = f'{command} {target} -c 4 -n -O'
         return ping(target), query
     elif command == 'mtr':
+        query = f'{command} {target} -oLSDW -r -c 10 -n'
         return mtr(target), query
     else:
         return connect(query), query
@@ -87,18 +89,18 @@ def reply_to_query(command, target):
 
 def mtr(target_host: str) -> str:
     try:
-        result = subprocess.check_output(['mtr', '-oLSDW', target_host, '-r', '-c 10'], universal_newlines=True)
-        return result
+        result = subprocess.check_output(['mtr', '-oLSDW', target_host, '-r', '-c 10', '-n'], universal_newlines=True)
+        return [result]
     except FileNotFoundError:
         return False
 
 
 def ping(target_host: str) -> str:
     try:
-        result = subprocess.check_output(['ping', target_host, '-c 4', '-n'], universal_newlines=True, stderr=subprocess.STDOUT)
-        return result
-    except subprocess.CalledProcessError:
-        return False
+        result = subprocess.check_output(['ping', target_host, '-c 4', '-n', '-O'], universal_newlines=True, stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as proc_err:
+        result = proc_err.output
+    return [result]
 
 
 if __name__ == '__main__':

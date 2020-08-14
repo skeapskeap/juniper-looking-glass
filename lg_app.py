@@ -23,10 +23,10 @@ def query():
     if reply:
         reply = '<br>'.join(reply)
         return jsonify({'reply': reply,
-                        'message': f'>{message}'})
+                        'message': f'# {message}'})
 
     return jsonify({'error': message})
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port='88')
