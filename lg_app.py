@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, url_for
 from forms import JunQuery
 from lg import reply_to_query
 from settings import APP_SECRET_KEY

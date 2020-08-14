@@ -10,38 +10,15 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <title>Looking glass</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        
-        <script>
-            $(document).ready(function() {
-                $('form').on('submit', function(event) {
-                    $.ajax({
-                       data : {
-                           message : $('#query_input').val(),
-                           target : $('#target_input').val()
-                       },
-                       type : 'POST',
-                       url : '/query'
-                    })
-                    .done(function(data) {
-                        if (data.error) {
-                            $('#query_section').html(data.error).show();
-                            $('#reply_section').hide();
-                        }
-                        else {
-                            $('#reply_section').html(data.reply).show();
-                            $('#query_section').text(data.message).show();
-                        }
-                    });
-                    event.preventDefault();
-                });
-            });
-        </script>
+        <script src="{{ url_for('static', filename='send_query.js') }}"></script>
     </head>
 
     <body>
+        {% include "navbar.html" %}
         <div class="container-fluid">
             <h1>Looking glass</h1>
             <div class="row">
+
                 <div class="col-2">
                     <form method="POST" action="/query">
                         {{ form.hidden_tag() }}
@@ -64,6 +41,7 @@
                     <h3 id="query_section"></h3>
                     <pre id="reply_section"></pre>
                 </div>
+                
             </div>
         </div>
     </body>
