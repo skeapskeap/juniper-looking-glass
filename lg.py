@@ -66,13 +66,14 @@ def connect(command: str) -> list:
         reply = reply.split('\n')
     except operations.rpc.RPCError as rpc_error:
         reply = [rpc_error.message]
+    except (IndexError, operations.errors.TimeoutExpiredError):
+        reply = ['Something went wrong. Try another prefix']
     return reply
 
 
 def reply_to_query(command, target):
     input = Input(command, target)
     if not input.validate():
-        print(input.error_message)
         return False, input.error_message
 
     query = input.query()
