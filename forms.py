@@ -1,16 +1,16 @@
 from flask_wtf import FlaskForm
+from lg import COMMAND_LIST
 from wtforms import SelectField, StringField, SubmitField
 from wtforms.validators import IPAddress, Optional
 
 
 class JunQuery(FlaskForm):
-    query       = SelectField(choices=[('show bgp summary', 'bgp summary'),
-                                       ('show route protocol bgp terse', 'bgp route terse'),
-                                       ('show route protocol bgp detail', 'bgp route detail'),
-                                       ('traceroute', 'traceroute'),
-                                       ('ping', 'ping')
-                                       ],
-                              default='ping',
-                              render_kw={'class': 'form-control'})
-    ip_address  = StringField('IP address', validators=[Optional(), IPAddress(message='incorrect IP')], render_kw={'class': 'form-control'})
-    submit      = SubmitField('submit query', render_kw={'class': 'form-control'})
+    query       = SelectField(choices=COMMAND_LIST, default='ping',
+                              render_kw={'class': 'form-control',
+                                         'id': 'query_input'})
+    target      = StringField('IP address', validators=[Optional(), IPAddress(message='incorrect IP')],
+                              render_kw={'class': 'form-control',
+                                         'id': 'target_input'})
+    submit      = SubmitField('submit query',
+                              render_kw={'class': 'form-control',
+                                         'id': 'show_reply'})

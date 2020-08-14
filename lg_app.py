@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request
 from forms import JunQuery
 from lg import reply_to_query
 from settings import APP_SECRET_KEY
@@ -15,16 +15,17 @@ def index():
 
 @app.route('/query', methods=('GET', 'POST'))
 def query():
-    form = JunQuery()
-    if form.validate_on_submit():
-        query = form.query.data
-        ip = form.ip_address.data
-        jun_response = reply_to_query(query, ip)
-        return render_template('reply.html',
-                                result=jun_response,
-                                host=ip,
-                                command=query)
-    return render_template('index.html')
+    command = request.form['message']
+    target = request.form['target']
+    jun_response = reply_to_query(command, target)
+
+    reply, message = jun_response
+    if reply:
+        reply = '<br>'.join(reply)
+        return jsonify({'reply': reply,
+                        'message': f'>{message}'})
+
+    return jsonify({'error': message})
 
 
 if __name__ == '__main__':
