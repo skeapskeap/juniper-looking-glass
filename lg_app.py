@@ -1,10 +1,13 @@
 from flask import Flask, render_template, jsonify, request, url_for
+from flask_limiter import  Limiter
+from flask_limiter.util import get_remote_address
 from forms import JunQuery
 from lg import reply_to_query
 from settings import APP_SECRET_KEY
 
 app = Flask(__name__)
 app.secret_key = APP_SECRET_KEY
+limiter = Limiter(app, key_func=get_remote_address)
 
 
 @app.route('/')
@@ -14,6 +17,7 @@ def index():
 
 
 @app.route('/query', methods=('GET', 'POST'))
+@limiter.limit('1/second;20/minute')
 def query():
     command = request.form['message']
     target = request.form['target']
