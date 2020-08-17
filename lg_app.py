@@ -4,9 +4,13 @@ from flask_limiter.util import get_remote_address
 from forms import JunQuery
 from lg import reply_to_query
 from settings import APP_SECRET_KEY
+import logging
+
 
 app = Flask(__name__)
 app.secret_key = APP_SECRET_KEY
+logging.basicConfig(filename='app.log',
+                    format='%(asctime)s %(levelname)s %(message)s')
 limiter = Limiter(app, key_func=get_remote_address)
 
 
