@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('form').on('submit', function(event) {
         $.ajax({
            data : {
-               message : $('#query_input').val(),
+               command : $('#command_input').val(),
                target : $('#target_input').val()
            },
            type : 'POST',
@@ -14,8 +14,8 @@ $(document).ready(function() {
                 $('#reply_section').hide();
             }
             else {
+                $('#query_section').text(data.command).show();
                 $('#reply_section').html(data.reply).show();
-                $('#query_section').text(data.message).show();
             }
         });
         event.preventDefault();

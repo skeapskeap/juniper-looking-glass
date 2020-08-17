@@ -1,3 +1,4 @@
+from config import HOST, PORT
 from flask import Flask, render_template, jsonify, request, url_for
 from flask_limiter import  Limiter
 from flask_limiter.util import get_remote_address
@@ -7,7 +8,7 @@ from settings import APP_SECRET_KEY
 
 app = Flask(__name__)
 app.secret_key = APP_SECRET_KEY
-limiter = Limiter(app, key_funk=get_remote_address)
+limiter = Limiter(app, key_func=get_remote_address)
 
 
 @app.route('/')
@@ -19,18 +20,17 @@ def index():
 @app.route('/query', methods=('GET', 'POST'))
 @limiter.limit('1/second')
 def query():
-    command = request.form['message']
-    target = request.form['target']
-    jun_response = reply_to_query(command, target)
-
-    reply, message = jun_response
-    if reply:
+    command = request.form['command']                   # из формы запрашивается первая часть команды
+    target = request.form['target']                     # из формы запрашивается вторая часть (dts host/prefix)
+    reply, message = reply_to_query(command, target)    # получается ответ(True) либо False
+                                                        # в комплекте с ответом идёт финальная версия самого запроса
+    if reply:                                           # в комплекте с False идёт текст ошибки
         reply = '<br>'.join(reply)
         return jsonify({'reply': reply,
-                        'message': f'# {message}'})
+                        'command': f'# {message}'})
 
     return jsonify({'error': message})
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='88')
+    app.run(debug=True, host=HOST, port=PORT)

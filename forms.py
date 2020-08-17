@@ -1,12 +1,12 @@
+from config import INPUT_CHOICE
 from flask_wtf import FlaskForm
-from lg import COMMAND_LIST
 from wtforms import SelectField, StringField, SubmitField
 
 
 class JunQuery(FlaskForm):
-    query       = SelectField(choices=COMMAND_LIST, default='ping',
+    query       = SelectField(choices=INPUT_CHOICE, default=INPUT_CHOICE[-1],
                               render_kw={'class': 'form-control',
-                                         'id': 'query_input'})
+                                         'id': 'command_input'})
     target      = StringField('IP address',
                               render_kw={'class': 'form-control',
                                          'id': 'target_input'})
