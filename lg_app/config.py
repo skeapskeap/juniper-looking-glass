@@ -1,6 +1,3 @@
-HOST = '0.0.0.0'
-PORT = '80'
-
 INPUT_CHOICE    = ['bgp summary',                                           # то, что показывает форма
                    'bgp route terse',
                    'bgp route detail',
@@ -17,3 +14,8 @@ COMMAND_MAPPING = {'bgp summary': 'show bgp summary',
 IGNORE_TARGET   = [COMMAND_MAPPING.get('bgp summary')]
 ANY_TARGET      = [COMMAND_MAPPING.get('bgp route terse'), COMMAND_MAPPING.get('bgp route detail')]
 LINUX_COMMAND   = [COMMAND_MAPPING.get('mtr'), COMMAND_MAPPING.get('ping')]
+
+# Flask app config
+ENV = 'production'
+DEBUG = 1
+SECRET_KEY = 'apha3Oodohrohneihiefiedohfeema'

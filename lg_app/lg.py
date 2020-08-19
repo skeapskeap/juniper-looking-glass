@@ -1,16 +1,16 @@
 #https://www.juniper.net/documentation/en_US/junos-pyez/topics/task/program/junos-pyez-rpcs-executing.html
 #https://blog.maxgraph.ru/2019/04/12/vyvod-xml-v-html-xml-to-html/ xml-to-html
-from config import COMMAND_MAPPING, IGNORE_TARGET, ANY_TARGET, LINUX_COMMAND
+from lg_app.config import COMMAND_MAPPING, IGNORE_TARGET, ANY_TARGET, LINUX_COMMAND
 from ncclient import manager  # https://ncclient.readthedocs.io/en/latest/
 from ncclient import operations
-from settings import JUN_IP, JUN_PORT, USERNAME, PASSWORD
+from lg_app.jun_params import JUN_IP, JUN_PORT, USERNAME, PASSWORD
 import socket
 import subprocess
 
 
 def reply_to_query(command, target):
     input = Input(command, target)
-    
+
     if not input.validate():
         return False, input.error_message
     if input.command in LINUX_COMMAND:
@@ -28,7 +28,7 @@ def linux_cli(command: list) -> list:
         result = f'{no_file.filename}: {no_file.strerror}'
     except subprocess.CalledProcessError as proc_err:
         result = proc_err.output
-    
+
     return [result]
 
 

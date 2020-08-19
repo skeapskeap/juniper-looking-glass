@@ -1,0 +1,194 @@
+2020-08-19 10:42:02,513 INFO  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2020-08-19 10:42:10,853 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Py\lg_junos\lg_app\__init__.py", line 19, in index
+    form = JunQuery()
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 274, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 131, in process
+    field.process(formdata)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\csrf\core.py", line 43, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2020-08-19 10:42:10,877 INFO 127.0.0.1 - - [19/Aug/2020 10:42:10] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-08-19 10:42:11,153 INFO 127.0.0.1 - - [19/Aug/2020 10:42:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-08-19 10:42:26,255 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Py\lg_junos\lg_app\__init__.py", line 19, in index
+    form = JunQuery()
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 274, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 131, in process
+    field.process(formdata)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\csrf\core.py", line 43, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2020-08-19 10:42:26,256 INFO 127.0.0.1 - - [19/Aug/2020 10:42:26] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-08-19 10:42:48,500 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Py\lg_junos\lg_app\__init__.py", line 19, in index
+    form = JunQuery()
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 274, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 131, in process
+    field.process(formdata)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\csrf\core.py", line 43, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2020-08-19 10:42:48,502 INFO 127.0.0.1 - - [19/Aug/2020 10:42:48] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-08-19 10:43:24,481 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 10:43:41,480 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Py\lg_junos\lg_app\__init__.py", line 19, in index
+    form = JunQuery()
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 274, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 131, in process
+    field.process(formdata)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\csrf\core.py", line 43, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2020-08-19 10:43:41,484 INFO 127.0.0.1 - - [19/Aug/2020 10:43:41] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-08-19 10:43:41,697 INFO 127.0.0.1 - - [19/Aug/2020 10:43:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-08-19 10:45:42,668 INFO  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2020-08-19 10:45:46,471 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\py\lg_junos\.env\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Py\lg_junos\lg_app\__init__.py", line 19, in index
+    form = JunQuery()
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 208, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 274, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\form.py", line 131, in process
+    field.process(formdata)
+  File "c:\py\lg_junos\.env\lib\site-packages\wtforms\csrf\core.py", line 43, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "c:\py\lg_junos\.env\lib\site-packages\flask_wtf\csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
+2020-08-19 10:45:46,480 INFO 127.0.0.1 - - [19/Aug/2020 10:45:46] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-08-19 10:47:02,023 INFO  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2020-08-19 10:47:02,756 INFO 127.0.0.1 - - [19/Aug/2020 10:47:02] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-08-19 10:47:02,871 INFO 127.0.0.1 - - [19/Aug/2020 10:47:02] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2020-08-19 10:47:02,991 INFO 127.0.0.1 - - [19/Aug/2020 10:47:02] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2020-08-19 10:47:03,128 INFO 127.0.0.1 - - [19/Aug/2020 10:47:03] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2020-08-19 10:47:03,566 INFO 127.0.0.1 - - [19/Aug/2020 10:47:03] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2020-08-19 10:47:03,608 INFO 127.0.0.1 - - [19/Aug/2020 10:47:03] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2020-08-19 10:47:03,797 INFO 127.0.0.1 - - [19/Aug/2020 10:47:03] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2020-08-19 10:48:45,315 INFO  * Detected change in 'C:\\Py\\lg_junos\\lg_app\\__init__.py', reloading
+2020-08-19 10:48:45,401 INFO  * Restarting with stat
+2020-08-19 10:48:50,987 INFO  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+2020-08-19 10:48:51,078 INFO 127.0.0.1 - - [19/Aug/2020 10:48:51] "[37mGET / HTTP/1.1[0m" 200 -
+2020-08-19 10:48:51,232 INFO 127.0.0.1 - - [19/Aug/2020 10:48:51] "[36mGET /static/send_query.js HTTP/1.1[0m" 304 -
+2020-08-19 10:48:51,413 INFO 127.0.0.1 - - [19/Aug/2020 10:48:51] "[37mGET /static/favicon.ico HTTP/1.1[0m" 200 -
+2020-08-19 10:48:56,608 INFO 127.0.0.1 - - [19/Aug/2020 10:48:56] "[37mPOST /query HTTP/1.1[0m" 200 -
+2020-08-19 10:49:18,719 INFO 127.0.0.1 - - [19/Aug/2020 10:49:18] "[37mPOST /query HTTP/1.1[0m" 200 -
+2020-08-19 10:49:43,729 INFO  * Detected change in 'C:\\Py\\lg_junos\\lg_app\\__init__.py', reloading
+2020-08-19 10:49:43,790 INFO  * Restarting with stat
+2020-08-19 10:53:54,220 INFO  * Restarting with stat

@@ -1,4 +1,4 @@
-from config import INPUT_CHOICE
+from lg_app.config import INPUT_CHOICE
 from flask_wtf import FlaskForm
 from wtforms import SelectField, StringField, SubmitField
 

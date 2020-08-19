@@ -1,6 +1,6 @@
 __pycache__/
-static/favicon.ico
 .env
-settings.py
+lg_app/app.log
+lg_app/jun_params.py
+lg_app/static/favicon.ico
 rpc_test.py
-app.log
